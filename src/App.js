@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import {BrowserRouter as Router,Route,Routes} from 'react-router-dom'
+import Home from './Home'
+import Login from './Login'
+import About from './About'
+import Counting from './Counting'
+import Fetch from './Fetch'
+import Fetchh from './Fetchh'
+import Product from './Product'
 
-function App() {
+
+
+const  App=()=> {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Router>
+      <div>
+        <Routes>
+          <Route path='/' element={<Home/>}/>
+          <Route path='/login' element={<Login/>}/>
+          <Route path='/about' element={<About/>}/>
+         <Route path='/count' element={<Counting/>}/>
+         <Route path='/home' elemennt={<Home/>}/>
+          <Route path='/fetch' element={<Fetch/>}/>
+          <Route path='/fetchh'element={<Fetchh/>}/>
+          <Route path='/product'element={<Product/>}/>
+        </Routes>
+      </div>
+    </Router>
+  )
 }
 
-export default App;
+export default App
